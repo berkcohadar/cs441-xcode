@@ -26,25 +26,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obL-Na-JXR">
-                                <rect key="frame" x="266" y="303" width="53" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="UFv-DK-JBm"/>
-                                </constraints>
-                                <state key="normal" title="Change">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="heavy"/>
-                                </state>
-                                <state key="highlighted" title="Change"/>
-                                <connections>
-                                    <action selector="changeButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PUT-3S-3HU"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="league-of-legends" translatesAutoresizingMaskIntoConstraints="NO" id="hnZ-SI-hAh">
                                 <rect key="frame" x="73.999999999999886" y="117" width="240" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySe-gq-Haa">
-                                <rect key="frame" x="60" y="376" width="266" height="186"/>
+                                <rect key="frame" x="69" y="334" width="252" height="177"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="Try me!">
@@ -52,6 +38,21 @@
                                 </state>
                                 <connections>
                                     <action selector="changeButtonColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PBV-2L-8lK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obL-Na-JXR">
+                                <rect key="frame" x="264" y="253" width="57" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UFv-DK-JBm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Change">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="heavy"/>
+                                </state>
+                                <state key="highlighted" title="Change"/>
+                                <connections>
+                                    <action selector="changeButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PUT-3S-3HU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -70,6 +71,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="changeButton" destination="obL-Na-JXR" id="HYK-uW-qAa"/>
                         <outlet property="colorButton" destination="ySe-gq-Haa" id="Cne-du-m3D"/>
                         <outlet property="imageView" destination="hnZ-SI-hAh" id="5Dp-bj-Ijl"/>
                     </connections>
