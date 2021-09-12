@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var colorButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -23,6 +24,9 @@ class ViewController: UIViewController {
         }
     }
     
-
+    @IBAction func changeButtonColor(_ sender: Any) {
+        colorButton.setTitleColor(.red, for: .normal)
+    }
+    
 }
 
