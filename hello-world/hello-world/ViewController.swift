@@ -25,7 +25,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func changeButtonColor(_ sender: Any) {
-        colorButton.setTitleColor(.red, for: .normal)
+        if (colorButton.titleColor(for: .normal) == UIColor.blue){
+            colorButton.setTitleColor(.red, for: .normal)
+        }
+        else{
+            colorButton.setTitleColor(.blue, for: .normal)
+        }
+        
     }
     
 }
