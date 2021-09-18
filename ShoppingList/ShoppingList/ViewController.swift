@@ -18,9 +18,14 @@ class ViewController: UIViewController {
         TableList.delegate = self
         TableList.dataSource = self
     }
-    var tasks = ["deneme"];
-    @IBAction func addToTable(input: String,_ sender: Any) {
-
+    var tasks = ["example task"];
+    var num = 1;
+    @IBAction func addToTable(_ sender: Any) {
+        tasks.append("new task -"+String(num))
+        num+=1;
+        TableList.beginUpdates()
+        TableList.insertRows(at: [IndexPath(row: tasks.count-1, section: 0)], with: .automatic)
+        TableList.endUpdates()
     }
     
 }
