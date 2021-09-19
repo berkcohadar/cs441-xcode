@@ -9,23 +9,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var MainLabel: UILabel!
     @IBOutlet weak var TableList: UITableView!
     @IBOutlet weak var AddButton: UIButton!
+    @IBOutlet weak var InputArea: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         TableList.delegate = self
         TableList.dataSource = self
     }
-    var tasks = ["example task"];
+    var tasks:[String] = [];
     var num = 1;
     @IBAction func addToTable(_ sender: Any) {
-        tasks.append("new task -"+String(num))
-        num+=1;
-        TableList.beginUpdates()
-        TableList.insertRows(at: [IndexPath(row: tasks.count-1, section: 0)], with: .automatic)
-        TableList.endUpdates()
+        if InputArea.text != ""{
+            tasks.append(InputArea.text!)
+            TableList.beginUpdates()
+            TableList.insertRows(at: [IndexPath(row: tasks.count-1, section: 0)], with: .automatic)
+            TableList.endUpdates()
+            InputArea.text = ""
+        }
     }
     
 }
