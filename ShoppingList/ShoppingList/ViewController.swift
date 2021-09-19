@@ -50,5 +50,11 @@ extension ViewController: UITableViewDataSource{
         cell.textLabel?.text = tasks[indexPath.row]
         return cell
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tasks.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+        }
+    }
 }
 
