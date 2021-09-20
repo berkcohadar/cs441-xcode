@@ -19,7 +19,6 @@ class ViewController: UIViewController {
         TableList.dataSource = self
     }
     var tasks:[String] = [];
-    var num = 1;
     @IBAction func addToTable(_ sender: Any) {
         if InputArea.text != ""{
             tasks.append(InputArea.text!)
