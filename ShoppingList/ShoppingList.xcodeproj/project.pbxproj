@@ -59,8 +59,8 @@
 				7A35705526F69C9000F16A6F /* AppDelegate.swift */,
 				7A35705726F69C9000F16A6F /* SceneDelegate.swift */,
 				7A35705926F69C9000F16A6F /* ViewController.swift */,
-				7A35705B26F69C9000F16A6F /* Main.storyboard */,
 				7A35705E26F69C9100F16A6F /* Assets.xcassets */,
+				7A35705B26F69C9000F16A6F /* Main.storyboard */,
 				7A35706026F69C9100F16A6F /* LaunchScreen.storyboard */,
 				7A35706326F69C9100F16A6F /* Info.plist */,
 			);

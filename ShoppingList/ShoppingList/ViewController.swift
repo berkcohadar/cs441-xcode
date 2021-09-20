@@ -27,10 +27,51 @@ class ViewController: UIViewController {
             TableList.endUpdates()
             InputArea.text = ""
         }
+        else{
+            showInputDialog(title: "Add task",
+                            subtitle: "Please enter a new task below.",
+                            actionTitle: "Add",
+                            cancelTitle: "Cancel",
+                            inputPlaceholder: "New task",
+                            inputKeyboardType: .phonePad,
+                            actionHandler:
+                                    { (input:String?) in
+                                        self.tasks.append(input!)
+                                        self.TableList.beginUpdates()
+                                        self.TableList.insertRows(at: [IndexPath(row: self.tasks.count-1, section: 0)], with: .automatic)
+                                        self.TableList.endUpdates()
+                                    })
+        }
     }
     
 }
-
+extension UIViewController {
+    func showInputDialog(title:String? = nil,
+                         subtitle:String? = nil,
+                         actionTitle:String? = "Add",
+                         cancelTitle:String? = "Cancel",
+                         inputPlaceholder:String? = nil,
+                         inputKeyboardType:UIKeyboardType = UIKeyboardType.default,
+                         cancelHandler: ((UIAlertAction) -> Swift.Void)? = nil,
+                         actionHandler: ((_ text: String?) -> Void)? = nil) {
+        
+        let alert = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
+        alert.addTextField { (textField:UITextField) in
+            textField.placeholder = inputPlaceholder
+            textField.keyboardType = inputKeyboardType
+        }
+        alert.addAction(UIAlertAction(title: actionTitle, style: .default, handler: { (action:UIAlertAction) in
+            guard let textField =  alert.textFields?.first else {
+                actionHandler?(nil)
+                return
+            }
+            actionHandler?(textField.text)
+        }))
+        alert.addAction(UIAlertAction(title: cancelTitle, style: .cancel, handler: cancelHandler))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+}
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("tapped!")
@@ -58,4 +99,3 @@ extension ViewController: UITableViewDataSource{
         }
     }
 }
-
