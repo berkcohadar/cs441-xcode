@@ -45,7 +45,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="tintColor" systemColor="labelColor"/>
-                                <state key="normal" title="+  Add Task">
+                                <state key="normal" title="+  Add Item">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" systemColor="systemGray2Color"/>
                                 </state>
