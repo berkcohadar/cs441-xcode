@@ -35,7 +35,14 @@ class ViewController: UIViewController {
                         )
     }
     @IBAction func shareTwitter(_ sender: Any) {
-        let activityViewController = UIActivityViewController(activityItems: shoppingList, applicationActivities: nil)
+        var message: String = "My shopping list contains; "
+        let item:String;
+        for item in shoppingList{
+            message = message + item + ", "
+        }
+        var result:[String] = [];
+        result.append(message)
+        let activityViewController = UIActivityViewController(activityItems: result, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         self.present(activityViewController, animated: true, completion: nil)
     }
