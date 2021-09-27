@@ -36,7 +36,6 @@ class ViewController: UIViewController {
     }
     @IBAction func shareTwitter(_ sender: Any) {
         var message: String = "My shopping list contains; "
-        let item:String;
         for item in shoppingList{
             message = message + item + ", "
         }
